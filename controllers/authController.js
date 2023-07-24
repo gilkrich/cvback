@@ -11,6 +11,11 @@ exports.users = (req, res) => {
         res.send(data)
     })
 }
+exports.users2 = (req, res) => {
+    User.find({}).then((data) => {
+        res.send(data)
+    })
+}
 
 exports.register = async (req, res) => {
     try {
