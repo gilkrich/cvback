@@ -7,6 +7,7 @@ router.route('/create').post(cvtempController.createcv);
 router.route('/getcv').post(cvtempController.findcv);
 router.route('/patchcv').patch(cvtempController.patchcv);
 router.route('/deletecv').patch(cvtempController.deletecv);
+router.route('/deletecvtwo').patch(cvtempController.deletecv);
 
 
 module.exports = router;
