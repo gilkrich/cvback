@@ -8,7 +8,7 @@ const secret = process.env.SECRET;
 
 exports.users = (req, res) => {
     User.find({}).then((data) => {
-        res.send("good")
+        res.send(data)
     })
 }
 exports.users2 = (req, res) => {
