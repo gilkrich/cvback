@@ -6,7 +6,13 @@ const authRoutes = require("./routes/auth");
 const cvRoutes = require("./routes/cv");
 require("dotenv").config();
 const cors = require("cors");
-app.use(cors());
+const corsOptions = {
+    origin : "https://cvconnect.netlify.app",
+    optionsSuccess :200
+  }
+  
+  // app.use(cors());
+    app.use(cors(corsOptions));
 
 
 mongoose

@@ -43,6 +43,45 @@ exports.login = async (req, res) => {
     }
 }
 
+exports.login2 = async (req, res) => {
+    try {
+        const isuser = await User.findOne({ username: req.body.username });
+        if (!isuser) {
+            return res.status(400).json({ error: "wrong username" });
+        }else{
+           const isMatch = await bcrypt.compare(req.body.password, isuser.password)
+            if (!isMatch) {
+                return res.status(400).json({ error: "wrong password" });
+            } else if (isMatch) {
+                const token = jwt.sign({ id: isuser._id }, process.env.SECRET);
+                return res.status(200).json({token});
+            }
+        }
+    }
+    catch (err) {
+        res.status(500).json({error:"fail"});
+    }
+}
+
+
+
+// const Product = require('../models/Product');
+
+// // Endpoint function for searching products
+// exports.searchProducts = async (req, res) => {
+//   const searchQuery = req.query.q; // Get the 'q' query parameter from the request
+  
+//   try {
+//     const matchingProducts = await Product.find({ name: { $regex: searchQuery, $options: 'i' } });
+//     // Use the $regex operator to perform a case-insensitive search on the 'name' field
+
+//     res.json(matchingProducts);
+//   } catch (error) {
+//     console.error('Error searching products:', error);
+//     res.status(500).json({ message: 'Error searching products' });
+//   }
+// };
+
 
 exports.addlist = async (req,res) =>{
     try{
@@ -52,6 +91,17 @@ exports.addlist = async (req,res) =>{
      res.status(500).json("fuck")
     }
    }
+
+exports.updateuser = async (req,res) =>{
+    try{
+       const patched = await User.findByIdAndUpdate(req.body.id ,req.body.obj)
+       res.status(201).json("sucsess")
+    }catch (err){
+     res.status(500).json("fail")
+    }
+   }
+   
+
    
 
    
