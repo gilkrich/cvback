@@ -10,7 +10,7 @@ exports.createcv = async (req, res) => {
         const newcv = await Cvtemp.create(req.body)
         const isuser = await User.findByIdAndUpdate(req.body.id,{$push:{personinfo:{_id:newcv._id}}});
         if (!isuser) {
-          return res.status(400).send("not goooddddd");
+          return res.status(400).send("not goood");
         }
         res.status(200).json('id added')
     } catch (err) {
