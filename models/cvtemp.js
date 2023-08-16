@@ -43,7 +43,6 @@ const cvSchema = new mongoose.Schema({
         school : {type:String},
         type : {type:String},
         bonus: {type:String},
-        bonus2: {type:String}
     }
 
 
