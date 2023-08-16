@@ -42,7 +42,8 @@ const cvSchema = new mongoose.Schema({
     degree : {
         school : {type:String},
         type : {type:String},
-        bonus: {type:String}
+        bonus: {type:String},
+        bonus2: {type:String}
     }
 
 
