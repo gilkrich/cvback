@@ -39,7 +39,7 @@ mongoose
   app.use("/cv", cvRoutes);
 
   app.listen(3007, () => {
-    console.log("Server running on port 3007");
+    console.log("Server running on port 3001");
   });
   
 
