@@ -6,18 +6,18 @@ const authRoutes = require("./routes/auth");
 const cvRoutes = require("./routes/cv");
 require("dotenv").config();
 const cors = require("cors");
-const corsOptions = {
-    origin : "https://cvconnect.netlify.app",
-    optionsSuccess :200
-  }
+// const corsOptions = {
+//     origin : "https://cvconnect.netlify.app",
+//     optionsSuccess :200
+//   }
   
-  // app.use(cors());
-    app.use(cors(corsOptions));
+  app.use(cors());
+    // app.use(cors(corsOptions));
 
 
 mongoose
   .connect(
-    'mongodb+srv://gilcvmanager:gil951753@cvcluster.zcc47zx.mongodb.net/?retryWrites=true&w=majority',
+    "mongodb+srv://gilcvmanager:VciiK5TEP3CHe8J7@cvcluster.zcc47zx.mongodb.net/?retryWrites=true&w=majority",
     {}
   )
   .then(() => {
