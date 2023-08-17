@@ -18,6 +18,7 @@ const cors = require("cors");
 mongoose
   .connect(
     "mongodb+srv://gilcvmanager:VciiK5TEP3CHe8J7@cvcluster.zcc47zx.mongodb.net/?retryWrites=true&w=majority",
+
     {}
   )
   .then(() => {
@@ -38,9 +39,9 @@ mongoose
 
   app.use("/cv", cvRoutes);
 
+
   app.listen(3007, () => {
     console.log("Server running on port 3001");
   });
   
-
-
+  
