@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const cvSchema = new mongoose.Schema({
+    desiredprofession : { type:String,required:true},
     fullname: { type: String, required: true },
     img : { type: String},
     adress : {type:String,required:true},
