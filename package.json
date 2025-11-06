@@ -9,6 +9,10 @@
     "mongodb": "^5.6.0",
     "mongoose": "^7.3.0"
   },
+
+   "engines": {
+     "node": ">=20.x"
+   },
   "name": "todoback",
   "version": "1.0.0",
   "main": "index.js",
