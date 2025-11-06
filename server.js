@@ -14,11 +14,11 @@ const cors = require("cors");
   app.use(cors());
     // app.use(cors(corsOptions));
 
+    // "mongodb+srv://gilcvmanager:VciiK5TEP3CHe8J7@cvcluster.zcc47zx.mongodb.net/?retryWrites=true&w=majority",
 
 mongoose
-  .connect(
-    "mongodb+srv://gilcvmanager:VciiK5TEP3CHe8J7@cvcluster.zcc47zx.mongodb.net/?retryWrites=true&w=majority",
-
+  .connect(     
+    "mongodb+srv://gilcvmanager:VciiK5TEP3CHe8J7@cvcluster.zcc47zx.mongodb.net/?appName=Cvcluster",
     {}
   )
   .then(() => {
